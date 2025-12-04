@@ -1,0 +1,9 @@
+{
+  "r.rterm.windows": "C:\\Program Files\\R\\R-4.5.2\\bin\\R.exe",
+  "r.rterm.option": [],
+  "r.lsp.debug": false,
+  "r.lsp.diagnostics": true,
+  "editor.quickSuggestions": {
+    "other": "off"
+  }
+}
