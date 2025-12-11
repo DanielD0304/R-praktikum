@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="generator" content="litedown 0.8">
-<title></title>
+<title>Blatt 4 Aufgabe 2</title>
 <style type="text/css">
 body {
   font-family: sans-serif;
@@ -113,6 +113,9 @@ section.footnotes {
 </head>
 <body>
 <div class="frontmatter">
+<div class="title"><h1>Blatt 4 Aufgabe 2</h1></div>
+<div class="author"><h2>Daniel Daenecke</h2></div>
+<div class="date"><h3>2025-12-11</h3></div>
 </div>
 <div class="body">
 <pre><code class="language-r">farben = rainbow(6)
@@ -120,7 +123,9 @@ section.footnotes {
 plot(NULL, xlim = c(-4, 4), ylim = c(0, 0.4), 
      xlab = &quot;x&quot;, ylab = &quot;Dichte&quot;, main = expression(Y[s] %-&gt;% N(0,1) ~ &quot;für&quot; ~ s %-&gt;% infinity))
 
+#degrees of freedom
 s_werte &lt;- c(1, 2, 5, 10, 30, 100)
+
 
 for(i in 1:length(s_werte)) {
     curve(dt(x, df = s_werte[i]), add = TRUE, col = farben[i], lwd = 2)
@@ -138,6 +143,8 @@ legend(&quot;topright&quot;,
 <pre><code class="language-r">plot(NULL, xlim = c(-4,4), ylim = c(0, 0.5), xlab = &quot;x&quot;, ylab = &quot;Dichte&quot;, main = expression((X[s] - s) / sqrt(2*s) %-&gt;% N(0,1) ~ &quot;für&quot; ~ s %-&gt;% infinity))
 for(i in 1:length(s_werte)) {
     s = s_werte[i]
+    # Z = (X_s - s) / sqrt(2s)
+    # X_s = Z*sqrt(2s) + s
     curve(dchisq(x*sqrt(2*s) + s, df = s) * sqrt(2*s), add = TRUE, col = farben[i], lwd = 2)
 }
 curve(dnorm(x), add = TRUE, col = &quot;black&quot;, lwd = 2, lty = 2)
